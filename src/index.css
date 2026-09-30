@@ -1,0 +1,7 @@
+/* Site-wide design system (tokens, nav, footer, buttons, typography). */
+@import "./styles/legacy/global.css";
+@import "./styles/preloader.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

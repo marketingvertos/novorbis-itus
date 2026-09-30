@@ -1,0 +1,103 @@
+/* ============================================================
+   COMING SOON — shared layout
+   Used on ccus.html, ats.html
+   ============================================================ */
+
+/* ── Page shell ── */
+.cs-page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--d-bg);
+  color: var(--d-fg);
+}
+
+/* ── Hero ── */
+.cs-hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 160px 24px 100px;
+}
+
+/* Grid background */
+.cs-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+
+/* Radial fade so grid darkens toward edges */
+.cs-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 40%, var(--d-bg) 100%);
+  pointer-events: none;
+}
+
+.cs-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 740px;
+}
+
+/* ── "Coming soon" badge ── */
+.cs-badge {
+  display: inline-block;
+  padding: 7px 18px;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.78);
+  margin-bottom: 32px;
+}
+
+/* ── Heading ── */
+.cs-hero-content h1 {
+  font-family: var(--heading);
+  font-weight: 800;
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  color: var(--d-fg);
+  margin-bottom: 24px;
+}
+
+/* ── Sub-heading ── */
+.cs-hero-content p {
+  font-family: var(--body);
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+  max-width: 580px;
+  margin: 0 auto 48px;
+}
+
+/* ── CTA row ── */
+.cs-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .cs-hero { padding: 140px 20px 80px; }
+  .cs-hero-content h1 { font-size: clamp(2.2rem, 8vw, 3.2rem); }
+}
